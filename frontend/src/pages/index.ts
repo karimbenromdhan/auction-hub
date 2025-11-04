@@ -1,0 +1,9 @@
+export { default as HomePage } from './HomePage';
+export { default as LoginPage } from './LoginPage';
+export { default as RegisterPage } from './RegisterPage';
+export { default as AuctionListPage } from './AuctionListPage';
+export { default as AuctionDetailPage } from './AuctionDetailPage';
+export { default as CreateAuctionPage } from './CreateAuctionPage';
+export { default as MyAuctionsPage } from './MyAuctionsPage';
+export { default as MyBidsPage } from './MyBidsPage';
+export { default as NotFoundPage } from './NotFoundPage';
