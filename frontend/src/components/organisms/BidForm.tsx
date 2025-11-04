@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Button, Text } from '../atoms';
-import { FormField } from '../molecules';
-import { usePlaceBid } from '../../hooks';
-import { placeBidSchema } from '../../utils';
-import { BidFormProps, BidFormData } from '@/interfaces';
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Button, Text } from "../atoms";
+import { FormField } from "../molecules";
+import { usePlaceBid } from "../../hooks";
+import { placeBidSchema } from "../../utils";
+import { BidFormProps, BidFormData } from "@/interfaces";
 
 function BidForm(props: BidFormProps) {
   const { auctionId, currentPrice, onSuccess } = props;
   const placeBidMutation = usePlaceBid();
-  
+
   const minBidAmount = Math.ceil(currentPrice) + 1;
-  
+
   const {
     register,
     handleSubmit,
@@ -62,14 +62,10 @@ function BidForm(props: BidFormProps) {
         placeholder={`Enter amount (min $${minBidAmount})`}
         error={errors.amount?.message}
         required
-        {...register('amount', { valueAsNumber: true })}
+        {...register("amount", { valueAsNumber: true })}
       />
 
-      <Button 
-        type="submit" 
-        fullWidth 
-        isLoading={placeBidMutation.isPending}
-      >
+      <Button type="submit" fullWidth isLoading={placeBidMutation.isPending}>
         Place Bid
       </Button>
 

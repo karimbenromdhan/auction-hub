@@ -46,3 +46,10 @@ export interface WithError {
 export interface WithFullWidth {
   fullWidth?: boolean;
 }
+
+/**
+ * Props for layout components that can optionally override children
+ */
+export interface LayoutProps {
+  children?: ReactNode;
+}

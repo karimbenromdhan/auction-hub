@@ -80,3 +80,50 @@ export interface TextProps extends WithChildren {
 export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement>, WithError, WithFullWidth {
   className?: string;
 }
+
+/**
+ * LiveBadge component props
+ */
+export interface LiveBadgeProps {
+  text?: string;
+}
+
+/**
+ * WaveDivider component props
+ */
+export interface WaveDividerProps {
+  fillColor?: string;
+}
+
+/**
+ * SectionIcon component props
+ */
+export interface SectionIconProps {
+  icon: ReactNode;
+  variant?: 'primary' | 'success' | 'warning' | 'danger';
+}
+
+/**
+ * StatBadge component props
+ */
+export interface StatBadgeProps {
+  icon?: ReactNode;
+  label: string;
+  variant?: 'primary' | 'default';
+  animated?: boolean;
+}
+
+/**
+ * BadgeTag component props
+ */
+export interface BadgeTagProps {
+  icon: ReactNode;
+  text: string;
+}
+
+/**
+ * TrustIndicator component props
+ */
+export interface TrustIndicatorProps {
+  text: string;
+}

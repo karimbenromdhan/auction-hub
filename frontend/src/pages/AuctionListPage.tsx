@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
 import { Text, Button } from '../components/atoms';
+import { Pagination } from '../components/molecules';
 import { AuctionList } from '../components/organisms';
 import { useAuctions } from '../hooks';
 import { auctionService } from '../services';
@@ -40,16 +41,6 @@ function AuctionListPage() {
   const scrollToTop = useCallback(() => {
     topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, []);
-  
-  const handlePreviousPage = useCallback(() => {
-    setPage((prev) => Math.max(1, prev - 1));
-    scrollToTop();
-  }, [scrollToTop]);
-  
-  const handleNextPage = useCallback(() => {
-    setPage((prev) => prev + 1);
-    scrollToTop();
-  }, [scrollToTop]);
 
   return (
     <div ref={topRef} className="min-h-screen bg-gray-50">
@@ -82,42 +73,15 @@ function AuctionListPage() {
         )}
 
         {/* Pagination */}
-        {data && data.totalPages > 1 && (
-          <div className="flex justify-center items-center space-x-4 mt-12">
-            <Button
-              variant="outline"
-              disabled={page === 1}
-              onClick={handlePreviousPage}
-            >
-              Previous
-            </Button>
-            <div className="flex items-center space-x-2">
-              {Array.from({ length: Math.min(5, data.totalPages) }, (_, i) => {
-                const pageNum = i + 1;
-                return (
-                  <Button
-                    key={pageNum}
-                    variant={page === pageNum ? 'primary' : 'outline'}
-                    size="sm"
-                    onClick={() => {
-                      setPage(pageNum);
-                      scrollToTop();
-                    }}
-                  >
-                    {pageNum}
-                  </Button>
-                );
-              })}
-            </div>
-            <Button
-              variant="outline"
-              disabled={page === data.totalPages}
-              onClick={handleNextPage}
-            >
-              Next
-            </Button>
-          </div>
-        )}
+        <Pagination
+          currentPage={page}
+          totalPages={data?.totalPages || 1}
+          onPageChange={(newPage) => {
+            setPage(newPage);
+            scrollToTop();
+          }}
+          variant="numbered"
+        />
       </div>
     </div>
   );
