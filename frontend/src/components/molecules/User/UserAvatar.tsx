@@ -20,17 +20,28 @@ function UserAvatar({ email, isMenuOpen, onToggle }: UserAvatarProps) {
         <DecorativeLayer className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-white shadow-sm" />
       </div>
       <div className="text-left">
-        <Text variant="small" weight="bold" className="text-gray-900 group-hover/user:text-blue-600 transition-colors">
+        <Text
+          variant="small"
+          weight="bold"
+          className="text-white group-hover/user:text-black transition-colors"
+        >
           {username}
         </Text>
       </div>
-      <svg 
-        className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${isMenuOpen ? 'rotate-180' : ''}`} 
-        fill="none" 
-        stroke="currentColor" 
+      <svg
+        className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${
+          isMenuOpen ? 'rotate-180' : ''
+        }`}
+        fill="none"
+        stroke="currentColor"
         viewBox="0 0 24 24"
       >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M19 9l-7 7-7-7"
+        />
       </svg>
     </Button>
   );

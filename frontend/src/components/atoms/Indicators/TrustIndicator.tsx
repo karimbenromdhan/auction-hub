@@ -1,7 +1,7 @@
-import { TrustIndicatorProps } from '@/interfaces/atoms';
+import { TrustIndicatorProps } from '../../../interfaces/atoms';
 import Text from '../Typography/Text';
 import { memo } from 'react';
-import { variantColorMap } from '@/constants/colors';
+import { variantColorMap } from '../../../constants/colors';
 
 function TrustIndicator({
   text,
