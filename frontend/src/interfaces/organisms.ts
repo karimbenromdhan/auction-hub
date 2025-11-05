@@ -1,12 +1,8 @@
-/**
- * Interface definitions for Organism components
- */
 
-import  { Auction, PaginatedAuctions, User } from '@/types';
 
-/**
- * AuctionList component props
- */
+import { Auction, PaginatedAuctions, User } from '@/types';
+
+
 export interface AuctionListProps {
   auctions?: Auction[];
   isLoading?: boolean;
@@ -14,56 +10,39 @@ export interface AuctionListProps {
   emptyMessage?: string;
 }
 
-/**
- * BidForm component props
- */
 export interface BidFormProps {
   auctionId: string;
   currentPrice: number;
   onSuccess?: () => void;
 }
 
-/**
- * BidForm data interface
- */
+
 export interface BidFormData {
   amount: number;
 }
 
-/**
- * BidHistory component props
- */
 export interface BidHistoryProps {
   auctionId: string;
 }
 
-/**
- * RegisterForm data interface
- */
 export interface RegisterFormData {
   email: string;
   password: string;
   confirmPassword: string;
 }
 
-/**
- * LoginForm data interface
- */
+
 export interface LoginFormData {
   email: string;
   password: string;
 }
 
-/**
- * HeroSection component props
- */
+
 export interface HeroSectionProps {
   activeAuctionsCount?: number;
 }
 
-/**
- * ActiveAuctionsSection component props
- */
+
 export interface ActiveAuctionsSectionProps {
   data?: PaginatedAuctions;
   isLoading: boolean;
@@ -72,42 +51,42 @@ export interface ActiveAuctionsSectionProps {
   onPageChange: (page: number) => void;
 }
 
-/**
- * Navigation component props
- */
+
 export interface NavigationProps {
   isAuthenticated: boolean;
 }
 
-/**
- * AuthSection component props
- */
+
 export interface AuthSectionProps {
   isAuthenticated: boolean;
   user: User | null;
   onLogout: () => void;
 }
 
-/**
- * HeroContent component props
- */
+
 export interface HeroContentProps {
   activeAuctionsCount?: number;
 }
 
-/**
- * AuctionsSectionHeader component props
- */
+
 export interface AuctionsSectionHeaderProps {
   totalAuctions?: number;
 }
 
-/**
- * AuthenticatedActions component props
- */
+
 export interface AuthenticatedActionsProps {
   user: { email?: string };
   showUserMenu: boolean;
   onToggleMenu: () => void;
   onLogout: () => void;
+}
+
+export interface AuctionBiddingSectionProps {
+  auctionId: string;
+  currentPrice: number;
+  canBid: boolean;
+  isAuthenticated: boolean;
+  isOwner: boolean;
+  isActive: boolean;
+  onLoginClick: () => void;
 }

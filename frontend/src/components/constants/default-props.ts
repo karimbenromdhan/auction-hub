@@ -3,7 +3,7 @@
  * Centralized to ensure consistency and easy maintenance
  */
 
-import type { 
+import type {
   BadgeProps,
   ButtonProps,
   CardProps,
@@ -16,7 +16,6 @@ import type {
 
 import type {
   FileUploadProps,
-  ModalProps,
   PriceDisplayProps,
   ToastProps,
   BidItemProps
@@ -89,9 +88,6 @@ export const DEFAULT_FILE_UPLOAD_PROPS: Partial<FileUploadProps> = {
   maxSizeMB: 5,
 } as const;
 
-export const DEFAULT_MODAL_PROPS: Partial<ModalProps> = {
-  size: 'md',
-} as const;
 
 export const DEFAULT_PRICE_DISPLAY_PROPS: Partial<PriceDisplayProps> = {
   highlight: false,

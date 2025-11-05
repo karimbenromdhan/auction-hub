@@ -37,6 +37,9 @@ export { default as ViewAllAuctionsButton } from './Buttons/ViewAllAuctionsButto
 
 // Cards
 export { default as FeatureCard } from './Cards/FeatureCard';
+export { AuctionImageCard } from './AuctionImageCard';
+export { AuctionPriceCard } from './AuctionPriceCard';
+export { SellerInfo } from './SellerInfo';
 
 // Badges
 export { default as LiveBadge } from './Badges/LiveBadge';

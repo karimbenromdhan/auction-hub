@@ -1,18 +1,13 @@
 import React from 'react';
 import { ErrorBoundary as ReactErrorBoundary } from 'react-error-boundary';
 import ErrorFallback from './ErrorFallback';
-import { ErrorLogger } from '../../utils/errorLogger';
+import { logError } from '../../utils/errorLogger';
 import { ErrorBoundaryProps } from '../../interfaces/common-components';
 
-
-function ErrorBoundary({ 
-  children, 
-  fallback, 
-  onError 
-}: ErrorBoundaryProps) {
+function ErrorBoundary({ children, fallback, onError }: ErrorBoundaryProps) {
   const handleError = (error: Error, errorInfo: React.ErrorInfo) => {
-    ErrorLogger.logError(error, errorInfo);
-      onError?.(error, errorInfo);
+    logError(error, errorInfo);
+    onError?.(error, errorInfo);
   };
 
   return (

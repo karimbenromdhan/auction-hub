@@ -1,6 +1,3 @@
-/**
- * Error Handling Utilities
- */
 
 import { ApiError } from './api.types';
 
@@ -15,7 +12,6 @@ export const isApiError = (error: unknown): error is ApiError => {
 
 export const getErrorMessage = (error: unknown): string => {
   if (isApiError(error)) {
-    // Handle both string and string[] message formats
     if (Array.isArray(error.message)) {
       return error.message.join(', ');
     }

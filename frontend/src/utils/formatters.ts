@@ -15,15 +15,6 @@ export const formatDate = (date: string | Date): string => {
   }).format(new Date(date));
 };
 
-export const formatDateTime = (date: string | Date): string => {
-  return new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  }).format(new Date(date));
-};
 
 export const formatRelativeTime = (date: string | Date): string => {
   const now = new Date().getTime();
@@ -57,9 +48,4 @@ export const formatCountdown = (
     return `${minutes}m ${seconds}s`;
   }
   return `${seconds}s`;
-};
-
-export const truncateText = (text: string, maxLength: number): string => {
-  if (text.length <= maxLength) return text;
-  return text.substring(0, maxLength) + '...';
 };

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card } from '../components/atoms';
 import { LoginForm } from '../components/organisms';
 

@@ -20,9 +20,9 @@ export { default as AuctionsSectionHeader } from './Auction/AuctionsSectionHeade
 // Bid
 export { default as BidForm } from './Bid/BidForm';
 export { default as BidHistory } from './Bid/BidHistory';
+export { AuctionBiddingSection } from './AuctionBiddingSection';
 
-// Overlays
-export { default as Modal } from './Overlays/Modal';
+
 
 // Feedback
 export { default as ToastContainer } from './Feedback/ToastContainer';

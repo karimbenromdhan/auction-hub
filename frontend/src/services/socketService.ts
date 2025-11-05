@@ -56,7 +56,6 @@ class SocketService {
   // Leave auction room
   leaveAuction(auctionId: string): void {
     if (!this.socket || !this.socket.connected) {
-      // Silently return if socket not connected (cleanup scenario)
       return;
     }
     this.socket.emit('leaveAuction', { auctionId });
@@ -96,10 +95,7 @@ class SocketService {
     return this.socket;
   }
 
-  // Check if connected
-  isConnected(): boolean {
-    return this.socket?.connected || false;
-  }
+
 }
 
 export const socketService = new SocketService();

@@ -52,15 +52,7 @@ export const CARD_PADDING_CLASSES = {
   lg: 'p-6',
 } as const;
 
-/**
- * Modal size classes
- */
-export const MODAL_SIZE_CLASSES = {
-  sm: 'max-w-md',
-  md: 'max-w-lg',
-  lg: 'max-w-2xl',
-  xl: 'max-w-4xl',
-} as const;
+
 
 /**
  * Toast type styles

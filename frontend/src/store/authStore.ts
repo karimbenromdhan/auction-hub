@@ -1,23 +1,8 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { User, AuthResponse, LoginCredentials, RegisterCredentials, getErrorMessage } from '../types';
+import { AuthResponse, LoginCredentials, RegisterCredentials, getErrorMessage } from '../types';
 import { authService } from '../services';
-
-interface AuthState {
-  user: User | null;
-  token: string | null;
-  isAuthenticated: boolean;
-  isLoading: boolean;
-  error: string | null;
-  
-  // Actions
-  login: (credentials: LoginCredentials) => Promise<void>;
-  register: (credentials: RegisterCredentials) => Promise<void>;
-  logout: () => void;
-  setUser: (user: User) => void;
-  setToken: (token: string) => void;
-  clearError: () => void;
-}
+import type { AuthState } from '@/interfaces/store';
 
 export const useAuthStore = create<AuthState>()(
   persist(
@@ -32,9 +17,6 @@ export const useAuthStore = create<AuthState>()(
         set({ isLoading: true, error: null });
         try {
           const response: AuthResponse = await authService.login(credentials);
-          authService.setToken(response.accessToken);
-          authService.setUser(response.user);
-          
           set({
             user: response.user,
             token: response.accessToken,
@@ -55,9 +37,6 @@ export const useAuthStore = create<AuthState>()(
         set({ isLoading: true, error: null });
         try {
           const response: AuthResponse = await authService.register(credentials);
-          authService.setToken(response.accessToken);
-          authService.setUser(response.user);
-          
           set({
             user: response.user,
             token: response.accessToken,
@@ -75,7 +54,6 @@ export const useAuthStore = create<AuthState>()(
       },
 
       logout: () => {
-        authService.logout();
         set({
           user: null,
           token: null,
@@ -84,17 +62,7 @@ export const useAuthStore = create<AuthState>()(
         });
       },
 
-      setUser: (user: User) => {
-        set({ user, isAuthenticated: true });
-      },
 
-      setToken: (token: string) => {
-        set({ token });
-      },
-
-      clearError: () => {
-        set({ error: null });
-      },
     }),
     {
       name: 'auth-storage',

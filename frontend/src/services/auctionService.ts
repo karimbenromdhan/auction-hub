@@ -8,31 +8,26 @@ import {
 } from '../types';
 
 export const auctionService = {
-  // Get all auctions (paginated)
   getAll: async (params?: PaginationParams): Promise<PaginatedAuctions> => {
     const response = await api.get<PaginatedAuctions>('/auctions', { params });
     return response.data;
   },
 
-  // Get active auctions only
   getActive: async (params?: PaginationParams): Promise<PaginatedAuctions> => {
     const response = await api.get<PaginatedAuctions>('/auctions/active', { params });
     return response.data;
   },
 
-  // Get auction by ID
   getById: async (id: string): Promise<Auction> => {
     const response = await api.get<Auction>(`/auctions/${id}`);
     return response.data;
   },
 
-  // Get my auctions
   getMyAuctions: async (): Promise<Auction[]> => {
     const response = await api.get<Auction[]>('/auctions/user/me');
     return response.data;
   },
 
-  // Create auction with image
   create: async (data: CreateAuctionData): Promise<Auction> => {
     const formData = new FormData();
     formData.append('title', data.title);
@@ -49,13 +44,11 @@ export const auctionService = {
     return response.data;
   },
 
-  // Update auction
   update: async (id: string, data: UpdateAuctionData): Promise<Auction> => {
     const response = await api.put<Auction>(`/auctions/${id}`, data);
     return response.data;
   },
 
-  // Delete auction
   delete: async (id: string): Promise<void> => {
     await api.delete(`/auctions/${id}`);
   },

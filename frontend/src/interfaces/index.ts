@@ -16,3 +16,6 @@ export * from './organisms';
 
 // Common component interfaces
 export * from './common-components';
+
+// Store interfaces
+export * from './store';
