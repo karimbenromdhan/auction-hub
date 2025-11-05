@@ -2,12 +2,6 @@ import { FallbackProps } from 'react-error-boundary';
 import { useNavigate } from 'react-router-dom';
 import { Button, Text } from '../atoms';
 
-/**
- * ErrorFallback Component
- * 
- * Displays a user-friendly error message when an error is caught by ErrorBoundary
- * Single Responsibility: Display error UI and handle error recovery actions
- */
 function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   const navigate = useNavigate();
 

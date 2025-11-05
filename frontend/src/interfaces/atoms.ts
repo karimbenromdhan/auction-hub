@@ -2,12 +2,12 @@
  * Interface definitions for Atom components
  */
 
-import type { 
-  ButtonHTMLAttributes, 
-  InputHTMLAttributes, 
+import type {
+  ButtonHTMLAttributes,
+  InputHTMLAttributes,
   LabelHTMLAttributes,
   TextareaHTMLAttributes,
-  ReactNode 
+  ReactNode
 } from 'react';
 import type { Size, StatusVariant, WithChildren, WithClassName, WithError, WithFullWidth } from './common';
 
@@ -136,6 +136,10 @@ export interface BadgeTagProps {
  */
 export interface TrustIndicatorProps {
   text: string;
+  /** Optional classname forwarded to the root element */
+  className?: string;
+  /** Visual variant which controls the indicator color */
+  variant?: StatusVariant;
 }
 
 /**
