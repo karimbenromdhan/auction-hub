@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuctionList } from '../components/organisms';
+import { DecorativeLayer } from '../components/atoms';
+import { AuctionList } from '../components/templates';
 import { useMyAuctions } from '../hooks';
 import { ROUTES, isAuctionActive } from '../utils';
 import PageWrapper from '../components/common/PageWrapper';
@@ -32,10 +33,10 @@ function MyAuctionsPage() {
       },
       {
         icon: (
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
-          </span>
+          <DecorativeLayer className="relative flex h-2 w-2">
+            <DecorativeLayer className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+            <DecorativeLayer className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+          </DecorativeLayer>
         ),
         label: 'Active',
         value: active,

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Text, Card } from '../components/atoms';
+import { Text, Card, DecorativeLayer } from '../components/atoms';
 import { BidItem } from '../components/molecules';
 import { useMyBids } from '../hooks';
 import { ROUTES, isAuctionActive } from '../utils';
@@ -10,7 +10,7 @@ import PageHero from '../components/common/PageHero';
 import ContentSection from '../components/common/ContentSection';
 import EmptyState from '../components/common/EmptyState';
 import ShimmerButton from '../components/common/ShimmerButton';
-import { StatBadge } from '../components/common/types';
+import { StatBadge } from '../interfaces/common-components';
 
 function MyBidsPage() {
   const navigate = useNavigate();
@@ -55,10 +55,10 @@ function MyBidsPage() {
       },
       {
         icon: (
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400"></span>
-          </span>
+          <DecorativeLayer className="relative flex h-2 w-2">
+            <DecorativeLayer className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
+            <DecorativeLayer className="relative inline-flex rounded-full h-2 w-2 bg-blue-400" />
+          </DecorativeLayer>
         ),
         label: 'Active',
         value: statsData.active,

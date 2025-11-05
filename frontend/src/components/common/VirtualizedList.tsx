@@ -1,13 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-
-interface VirtualizedListProps<T> {
-  items: T[];
-  itemHeight: number;
-  containerHeight: number;
-  renderItem: (item: T, index: number) => React.ReactNode;
-  overscan?: number; // Number of items to render outside viewport
-  className?: string;
-}
+import { VirtualizedListProps } from '../../interfaces/common-components';
 
 /**
  * Simple virtualized list component

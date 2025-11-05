@@ -1,8 +1,8 @@
-import React, { useState, useCallback, useEffect, useRef } from 'react';
+import  { useState, useCallback, useEffect, useRef } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
-import { Text, Button } from '../components/atoms';
-import { Pagination } from '../components/molecules';
-import { AuctionList } from '../components/organisms';
+import { Text } from '../components/atoms';
+import { Pagination } from '../components/organisms';
+import { AuctionList } from '../components/templates';
 import { useAuctions } from '../hooks';
 import { auctionService } from '../services';
 import { queryKeys } from '../config/queryClient';

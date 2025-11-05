@@ -1,11 +1,5 @@
-import React from 'react';
 
-interface SkeletonProps {
-  className?: string;
-  variant?: 'text' | 'circular' | 'rectangular';
-  width?: string | number;
-  height?: string | number;
-}
+import { SkeletonProps } from '../../interfaces/common-components';
 
 const DEFAULT_SKELETON_PROPS = {
   variant: 'rectangular' as const,

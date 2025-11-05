@@ -31,6 +31,16 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 /**
+ * IconButton component props
+ */
+export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  icon: ReactNode;
+  label: string;
+  variant?: 'primary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+}
+
+/**
  * Card component props
  */
 export interface CardProps extends WithChildren, WithClassName {
@@ -126,4 +136,12 @@ export interface BadgeTagProps {
  */
 export interface TrustIndicatorProps {
   text: string;
+}
+
+/**
+ * DecorativeLayer component props
+ * Used for purely visual/decorative elements like animation overlays
+ */
+export interface DecorativeLayerProps extends WithClassName {
+  children?: ReactNode;
 }

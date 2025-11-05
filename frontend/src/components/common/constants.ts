@@ -1,4 +1,3 @@
-// PageHero Constants
 export const VARIANT_COLORS: Record<string, string> = {
   default: 'bg-white/10 border-white/20',
   success: 'bg-green-500/20 border-green-400/30',
@@ -6,7 +5,6 @@ export const VARIANT_COLORS: Record<string, string> = {
   info: 'bg-blue-500/20 border-blue-400/30',
 };
 
-// ContentSection Constants
 export const MAX_WIDTH_CLASSES: Record<string, string> = {
   sm: 'max-w-2xl',
   md: 'max-w-3xl',

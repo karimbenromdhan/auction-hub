@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Header, ToastContainer } from '../components/organisms';
+import { Header } from '../components/templates';
+import { ToastContainer } from '../components/organisms';
 import { setNavigationCallback } from '../services/api';
 import AppRoutes from '../routes/AppRoutes';
 import { LayoutProps } from '../interfaces/common';

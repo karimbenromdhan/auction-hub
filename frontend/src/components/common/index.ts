@@ -15,6 +15,7 @@ export { default as AuctionDetailSkeleton } from './AuctionDetailSkeleton';
 
 // Error Boundaries
 export { default as ErrorBoundary } from './ErrorBoundary';
+export { default as ErrorFallback } from './ErrorFallback';
 export { default as RouteErrorBoundary } from './RouteErrorBoundary';
 
 // Route Components
@@ -31,7 +32,8 @@ export type {
   ContentSectionProps,
   EmptyStateProps,
   ShimmerButtonProps,
-} from './types';
+  VirtualizedListProps,
+} from '../../interfaces/common-components';
 
 // Constants
 export { VARIANT_COLORS, MAX_WIDTH_CLASSES } from './constants';

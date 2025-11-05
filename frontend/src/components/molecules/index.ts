@@ -1,36 +1,52 @@
-export { default as FormField } from './FormField';
-export { default as CountdownTimer } from './CountdownTimer';
-export { default as PriceDisplay } from './PriceDisplay';
-export { default as AuctionCard } from './AuctionCard';
-export { default as BidItem } from './BidItem';
-export { default as Toast } from './Toast';
-export { default as Modal } from './Modal';
-export { default as FileUpload } from './FileUpload';
-export { default as FeatureCard } from './FeatureCard';
-export { default as Pagination } from './Pagination';
-export { default as Logo } from './Logo';
-export { default as NavLink } from './NavLink';
-export { default as UserAvatar } from './UserAvatar';
-export { default as UserDropdownMenu } from './UserDropdownMenu';
-export { default as HeroHeading } from './HeroHeading';
-export { default as HeroCTAButtons } from './HeroCTAButtons';
-export { default as HeroStats } from './HeroStats';
-export { default as HeroVisual } from './HeroVisual';
-export { default as HeroBackground } from './HeroBackground';
-export { default as SectionBackground } from './SectionBackground';
-export { default as SectionHeaderTitle } from './SectionHeaderTitle';
-export { default as AuctionStatsBar } from './AuctionStatsBar';
-export { default as ViewAllAuctionsButton } from './ViewAllAuctionsButton';
-export { default as EmptyAuctionsCTA } from './EmptyAuctionsCTA';
-export { default as CreateAuctionButton } from './CreateAuctionButton';
-export { default as LoginButton } from './LoginButton';
-export { default as SignUpButton } from './SignUpButton';
-export { default as LogoutButton } from './LogoutButton';
-export { default as UserMenu } from './UserMenu';
-export { default as CTABackground } from './CTABackground';
-export { default as CTABadge } from './CTABadge';
-export { default as CTAHeading } from './CTAHeading';
-export { default as GetStartedButton } from './GetStartedButton';
-export { default as ExploreAuctionsButton } from './ExploreAuctionsButton';
-export { default as CTAButtons } from './CTAButtons';
-export { default as TrustBadges } from './TrustBadges';
+// Form
+export { default as FormField } from './Form/FormField';
+
+// Feedback
+export { default as Toast } from './Feedback/Toast';
+
+// Display
+export { default as CountdownTimer } from './Display/CountdownTimer';
+export { default as PriceDisplay } from './Display/PriceDisplay';
+
+// Auction
+export { default as BidItem } from './Auction/BidItem';
+export { default as AuctionStatsBar } from './Auction/AuctionStatsBar';
+export { default as StatBadge } from './Auction/StatBadge';
+
+// Hero
+export { default as HeroContent } from './Hero/HeroContent';
+export { default as HeroHeading } from './Hero/HeroHeading';
+export { default as HeroCTAButtons } from './Hero/HeroCTAButtons';
+export { default as HeroStats } from './Hero/HeroStats';
+export { default as HeroVisual } from './Hero/HeroVisual';
+
+// CTA
+export { default as CTABadge } from './CTA/CTABadge';
+export { default as CTAButtons } from './CTA/CTAButtons';
+export { default as CTAHeading } from './CTA/CTAHeading';
+export { default as EmptyAuctionsCTA } from './CTA/EmptyAuctionsCTA';
+
+// Buttons
+export { default as CreateAuctionButton } from './Buttons/CreateAuctionButton';
+export { default as ExploreAuctionsButton } from './Buttons/ExploreAuctionsButton';
+export { default as GetStartedButton } from './Buttons/GetStartedButton';
+export { default as LoginButton } from './Buttons/LoginButton';
+export { default as LogoutButton } from './Buttons/LogoutButton';
+export { default as SignUpButton } from './Buttons/SignUpButton';
+export { default as ViewAllAuctionsButton } from './Buttons/ViewAllAuctionsButton';
+
+// Cards
+export { default as FeatureCard } from './Cards/FeatureCard';
+
+// Badges
+export { default as LiveBadge } from './Badges/LiveBadge';
+export { default as TrustBadges } from './Badges/TrustBadges';
+
+// User
+export { default as Logo } from './User/Logo';
+export { default as UserAvatar } from './User/UserAvatar';
+export { default as UserDropdownMenu } from './User/UserDropdownMenu';
+
+// Layout
+export { default as SectionHeaderTitle } from './Layout/SectionHeaderTitle';
+export { default as SectionIcon } from './Layout/SectionIcon';

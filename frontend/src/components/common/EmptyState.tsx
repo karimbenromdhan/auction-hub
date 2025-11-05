@@ -1,9 +1,7 @@
-import React from 'react';
 import { Text, Button } from '../atoms';
-import { EmptyStateProps } from './types';
+import { EmptyStateProps } from '../../interfaces/common-components';
 
 function EmptyState({ icon, title, description, action, className = '' }: EmptyStateProps) {
-  const ActionButton = action?.to ? 'a' : 'button';
   
   return (
     <div className={`text-center ${className}`}>
@@ -24,9 +22,9 @@ function EmptyState({ icon, title, description, action, className = '' }: EmptyS
             className="shadow-md hover:shadow-lg transition-shadow"
             onClick={action.onClick}
           >
-            <span className="flex items-center gap-2">
+            <Text as="span" className="flex items-center gap-2">
               {action.label}
-            </span>
+            </Text>
           </Button>
         )}
       </div>

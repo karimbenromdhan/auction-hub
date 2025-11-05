@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Text, Button, Card, Textarea } from '../components/atoms';
-import { FormField, FileUpload } from '../components/molecules';
+import { FormField } from '../components/molecules';
+import { FileUpload } from '../components/organisms';
 import { useCreateAuction } from '../hooks';
 import { createAuctionSchema, ROUTES } from '../utils';
 

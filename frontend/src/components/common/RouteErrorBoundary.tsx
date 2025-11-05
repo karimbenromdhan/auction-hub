@@ -1,12 +1,7 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Text, Button, Card } from '../atoms';
 import { ROUTES } from '../../utils';
-
-interface RouteErrorBoundaryProps {
-  error: Error;
-  resetErrorBoundary: () => void;
-}
+import { RouteErrorBoundaryProps } from '../../interfaces/common-components';
 
 function RouteErrorBoundary({ error, resetErrorBoundary }: RouteErrorBoundaryProps) {
   const navigate = useNavigate();
@@ -24,8 +19,7 @@ function RouteErrorBoundary({ error, resetErrorBoundary }: RouteErrorBoundaryPro
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <Card padding="lg" className="max-w-2xl w-full">
         <div className="text-center">
-          {/* Error Icon */}
-          <div className="mb-6">
+=          <div className="mb-6">
             <svg
               className="w-20 h-20 text-red-500 mx-auto"
               fill="none"
@@ -41,37 +35,19 @@ function RouteErrorBoundary({ error, resetErrorBoundary }: RouteErrorBoundaryPro
             </svg>
           </div>
 
-          {/* Error Message */}
           <Text variant="h2" className="mb-4">
             Oops! Something went wrong
           </Text>
-          <Text variant="body" color="secondary" className="mb-6">
+          <Text variant="body" color="secondary" className="mb-2">
             We encountered an unexpected error while loading this page.
           </Text>
-
-          {/* Error Details (in development) */}
-          {process.env.NODE_ENV === 'development' && (
-            <div className="mb-6 p-4 bg-red-50 rounded-lg text-left">
-              <Text variant="small" weight="semibold" className="text-red-800 mb-2">
-                Error Details:
-              </Text>
-              <Text variant="small" className="text-red-700 font-mono break-all">
-                {error.message}
-              </Text>
-              {error.stack && (
-                <details className="mt-2">
-                  <summary className="cursor-pointer text-red-700 text-sm">
-                    Stack Trace
-                  </summary>
-                  <pre className="mt-2 text-xs text-red-600 overflow-auto max-h-40">
-                    {error.stack}
-                  </pre>
-                </details>
-              )}
-            </div>
+          
+          {error?.message && (
+            <Text variant="small" className="text-red-600 mb-6 font-mono bg-red-50 p-3 rounded-lg">
+              {error.message}
+            </Text>
           )}
 
-          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button onClick={handleRetry} variant="primary">
               Try Again

@@ -1,4 +1,3 @@
-// Currency formatter
 export const formatCurrency = (amount: number, currency: string = 'USD'): string => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -8,7 +7,6 @@ export const formatCurrency = (amount: number, currency: string = 'USD'): string
   }).format(amount);
 };
 
-// Date formatter
 export const formatDate = (date: string | Date): string => {
   return new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
@@ -17,7 +15,6 @@ export const formatDate = (date: string | Date): string => {
   }).format(new Date(date));
 };
 
-// Date and time formatter
 export const formatDateTime = (date: string | Date): string => {
   return new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
@@ -28,7 +25,6 @@ export const formatDateTime = (date: string | Date): string => {
   }).format(new Date(date));
 };
 
-// Relative time formatter (e.g., "2 hours ago")
 export const formatRelativeTime = (date: string | Date): string => {
   const now = new Date().getTime();
   const then = new Date(date).getTime();
@@ -45,7 +41,6 @@ export const formatRelativeTime = (date: string | Date): string => {
   return 'Just now';
 };
 
-// Format countdown time
 export const formatCountdown = (
   days: number,
   hours: number,
@@ -64,7 +59,6 @@ export const formatCountdown = (
   return `${seconds}s`;
 };
 
-// Truncate text
 export const truncateText = (text: string, maxLength: number): string => {
   if (text.length <= maxLength) return text;
   return text.substring(0, maxLength) + '...';

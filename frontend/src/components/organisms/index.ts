@@ -1,18 +1,39 @@
-export { default as Header } from './Header';
-export { default as LoginForm } from './LoginForm';
-export { default as RegisterForm } from './RegisterForm';
-export { default as BidForm } from './BidForm';
-export { default as BidHistory } from './BidHistory';
-export { default as AuctionList } from './AuctionList';
-export { default as ToastContainer } from './ToastContainer';
-export { default as HeroSection } from './HeroSection';
-export { default as FeaturesSection } from './FeaturesSection';
-export { default as CTASection } from './CTASection';
-export { default as ActiveAuctionsSection } from './ActiveAuctionsSection';
-export { default as Navigation } from './Navigation';
-export { default as AuthSection } from './AuthSection';
-export { default as HeroContent } from './HeroContent';
-export { default as AuctionsSectionHeader } from './AuctionsSectionHeader';
-export { default as AuthenticatedActions } from './AuthenticatedActions';
-export { default as GuestActions } from './GuestActions';
-export { default as CTAContent } from './CTAContent';
+// Layout
+export { default as Header } from './Layout/Header';
+export { default as Navigation } from './Layout/Navigation';
+
+// Hero
+export { default as HeroSection } from './Hero/HeroSection';
+
+// Auth
+export { default as LoginForm } from './Auth/LoginForm';
+export { default as RegisterForm } from './Auth/RegisterForm';
+export { default as AuthSection } from './Auth/AuthSection';
+export { default as AuthenticatedActions } from './Auth/AuthenticatedActions';
+export { default as GuestActions } from './Auth/GuestActions';
+
+// Auction
+export { default as AuctionCard } from './Auction/AuctionCard';
+export { default as ActiveAuctionsSection } from './Auction/ActiveAuctionsSection';
+export { default as AuctionsSectionHeader } from './Auction/AuctionsSectionHeader';
+
+// Bid
+export { default as BidForm } from './Bid/BidForm';
+export { default as BidHistory } from './Bid/BidHistory';
+
+// Overlays
+export { default as Modal } from './Overlays/Modal';
+
+// Feedback
+export { default as ToastContainer } from './Feedback/ToastContainer';
+
+// Form
+export { default as FileUpload } from './Form/FileUpload';
+
+// Sections
+export { default as CTASection } from './Sections/CTASection';
+export { default as FeaturesSection } from './Sections/FeaturesSection';
+
+// UI
+export { default as UserMenu } from './UI/UserMenu';
+export { default as Pagination } from './UI/Pagination';

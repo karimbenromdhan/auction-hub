@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from '../atoms';
-import { PageHeroProps } from './types';
+import { PageHeroProps } from '../../interfaces/common-components';
 import { VARIANT_COLORS } from './constants';
 
 function PageHero({ badge, title, subtitle, stats, action, variant = 'default' }: PageHeroProps) {
@@ -28,12 +28,12 @@ function PageHero({ badge, title, subtitle, stats, action, variant = 'default' }
               </div>
             )}
 
-            <h1 className="text-4xl lg:text-5xl font-bold mb-3 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+            <Text as="h1" className="text-4xl lg:text-5xl font-bold mb-3 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
               {title}
-            </h1>
-            <p className="text-blue-100 text-lg max-w-2xl">
+            </Text>
+            <Text as="p" className="text-blue-100 text-lg max-w-2xl">
               {subtitle}
-            </p>
+            </Text>
 
             {/* Stats */}
             {stats && stats.length > 0 && (
